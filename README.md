@@ -35,7 +35,7 @@ rosbag play your-bag.bag -r 3
 # Related Package
 1. Optimization node:[liosam](https://github.com/TixiaoShan/LIO-SAM)
 2. radar ego-motion estimator: [estimator](https://github.com/christopherdoer/rio)
-3. Point cloud registration: [ndt](https://github.com/zju-sclab/NDT-library)
-4.catkin simple : [catkin simple](https://github.com/catkin/catkin_simple)
+3. Point cloud registration: [ndt](https://github.com/zju-sclab/NDT-library)  
+4. catkin simple : [catkin simple](https://github.com/catkin/catkin_simple)
 # TODO
 
