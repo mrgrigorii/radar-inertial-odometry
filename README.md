@@ -5,6 +5,9 @@ A video of the demonstration of the method can be found on [YouTube].
 # System architecture
 ![frame](https://github.com/lincoln1587/radar-inertial-odometry/blob/master/radar_slam/doc/frame.png)
 
+#Run Demo
+![demo](https://github.com/lincoln1587/radar-inertial-odometry/blob/master/radar_slam/doc/lib.png)
+
 # Dependency
 ros : melodic  
 gtsam : 4.0.2  
