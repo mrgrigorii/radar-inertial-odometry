@@ -5,7 +5,9 @@ A video of the demonstration of the method can be found on [YouTube].
 # System architecture
 ![frame](https://github.com/lincoln1587/radar-inertial-odometry/blob/master/radar_slam/doc/frame.png)
 
-#Run Demo
+# The available branches are in the master
+
+# Run Demo
 ![demo](https://github.com/lincoln1587/radar-inertial-odometry/blob/master/radar_slam/doc/lib.png)
 
 # Dependency
@@ -36,6 +38,4 @@ rosbag play your-bag.bag -r 3
 3. Point cloud registration: [ndt](https://github.com/zju-sclab/NDT-library)
 
 # TODO
-
-
 
