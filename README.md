@@ -29,7 +29,7 @@ catkin_make
 1. Run the launch file:  
 roslaunch radar_slam run.launch
 2. Play existing bag files:  
-rosbag play your-bag.bag -r 3
+rosbag play your-bag.bag
 
 
 # Related Package
@@ -37,5 +37,6 @@ rosbag play your-bag.bag -r 3
 2. radar ego-motion estimator: [estimator](https://github.com/christopherdoer/rio)
 3. Point cloud registration: [ndt](https://github.com/zju-sclab/NDT-library)  
 4. catkin simple : [catkin simple](https://github.com/catkin/catkin_simple)
+
 # TODO
 
