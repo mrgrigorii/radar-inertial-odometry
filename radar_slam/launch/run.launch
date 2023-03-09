@@ -1,0 +1,44 @@
+<launch>
+    <param name="/use_sim_time" value="true" />
+
+    <!-- Parameters -->
+    <rosparam file="$(find radar_slam)/config/params.yaml" command="load" />
+
+    <arg name="mode"/>
+    <arg name="do_plot" default="True"/>
+    <arg name="config" default="params_demo_dataset"/>
+    <arg name="calibration" default="$(find radar_ego_velocity_estimator)/config/calib_rio"/>
+    <arg name="topic_twist" default="/reve/twist"/> <!-- 发布雷达速度-->>
+    <arg name="run_without_trigger" default="False"/>
+    <arg name="use_odr" default="False"/>
+
+    <node name="radar_ego_velocity_estimator" pkg="radar_ego_velocity_estimator" type="radar_ego_velocity_estimation_ros_node"
+          output="screen" launch-prefix="bash -c 'sleep 1; $0 $@' ">>
+        <rosparam file="$(find radar_ego_velocity_estimator)/config/$(arg config).yaml" command="load"/>
+        <rosparam file="$(arg calibration).yaml" command="load" ns=""/>
+        <param name="run_without_trigger" value="$(arg run_without_trigger)" type="bool"/>
+        <param name="use_odr" value="$(arg use_odr)" type="bool"/>
+        <param name="topic_twist" value="$(arg topic_twist)" type="string"/>
+        <param name="topic_radar_scan" value="/pcl2_visualize_2" type="string"/>
+        <param name="topic_radar_trigger" value="/radar/trigger" type="string"/>
+    </node>
+
+
+    <arg name="project" default="radar_slam"/>
+    <node pkg="$(arg project)" type="$(arg project)_imuPreintegration"   name="$(arg project)_imuPreintegration"    output="screen" 	respawn="true"/>
+    <node pkg = "$(arg project)" type = "$(arg project)_newndt" name = "$(arg project)_newndt" output="screen"  respawn="true"/>
+    <node pkg="rviz" type="rviz" name="$(arg project)_rviz" args="-d $(find radar_slam)/launch/rviz/config/rviz.rviz" />
+
+
+
+    <node pkg="showpath" type="showpath_gps" name="showpath_gps" output="screen">
+        <param name="gps_topic" type="string" value="/dji_osdk_ros/rtk_position" />
+        <!--/dji_osdk_ros/vo_position       15897 msgs    : dji_osdk_ros/VOPosition -->
+        <param name="VO_topic" type="string" value="/dji_osdk_ros/VOPosition1" /> 
+        <param name="attitude_topic" type="string" value="/dji_osdk_ros/attitude" />
+        <param name="healthy_topic" type="string" value="/dji_osdk_ros/gps_health" />
+        <!-- daquan 2.38988   xiaoquan 2.268928 -->
+        <param name="init_yaw_d" type="double" value="0" />
+    </node> 
+
+</launch>

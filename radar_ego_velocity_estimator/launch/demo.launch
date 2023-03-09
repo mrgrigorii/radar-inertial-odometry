@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node name="radar_ego_velocity_estimator" pkg="radar_ego_velocity_estimator" type="radar_ego_velocity_estimation_$(arg mode)_node"
+          output="screen" launch-prefix="bash -c 'sleep 1; $0 $@' ">>
+        <rosparam file="$(find radar_ego_velocity_estimator)/config/$(arg config).yaml" command="load"/>
+        <rosparam file="$(arg calibration).yaml" command="load" ns=""/>
+        <param name="run_without_trigger" value="$(arg run_without_trigger)" type="bool"/>
+        <param name="use_odr" value="$(arg use_odr)" type="bool"/>
+        <param name="topic_twist" value="$(arg topic_twist)" type="string"/>
+        <param name="topic_radar_scan" value="/pcl2_visualize_2" type="string"/>
+        <param name="topic_radar_trigger" value="/radar/trigger" type="string"/>
+    </node>
+
+
+</launch>
+
+

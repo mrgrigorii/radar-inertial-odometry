@@ -1,0 +1,36 @@
+min_dist: 0.25                    
+max_dist: 200                         
+min_db: 5                             
+elevation_thresh_deg: 60             
+azimuth_thresh_deg: 60                
+radar_velocity_correction_factor: 1.0 
+
+
+thresh_zero_velocity: 0.05       
+allowed_outlier_percentage: 0.25  
+sigma_zero_velocity_x: 0.025     
+sigma_zero_velocity_y: 0.025      
+sigma_zero_velocity_z: 0.025      
+
+
+max_sigma_x: 0.2   
+max_sigma_y: 0.15  
+max_sigma_z: 0.2   
+max_r_cond: 1.0e3  
+use_cholesky_instead_of_bdcsvd: True 
+
+use_ransac: True     
+outlier_prob: 0.4    
+success_prob: 0.9999 
+N_ransac_points: 3   
+inlier_thresh: 0.15  
+
+sigma_offset_radar_x: 0.05   
+sigma_offset_radar_y: 0.025
+sigma_offset_radar_z: 0.05
+
+use_odr: False    
+min_speed_odr: 4.0 
+sigma_v_r: 0.125  
+model_noise_offset_deg: 2.0 
+model_noise_scale_deg: 10.0 

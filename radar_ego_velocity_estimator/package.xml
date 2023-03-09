@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>radar_ego_velocity_estimator</name>
+    <version>1.0.0</version>
+    <description>radar_ego_velocity_estimator</description>
+    <maintainer email="HL@163.com"/>
+    <license>TODO</license>
+    <buildtool_depend>catkin</buildtool_depend>
+    <buildtool_depend>catkin_simple</buildtool_depend>
+    <depend>rosbag</depend>
+    <depend>roscpp</depend>
+    <depend>angles</depend>
+    <depend>dynamic_reconfigure</depend>
+    <depend>pcl_ros</depend>
+
+    <export>
+    </export>
+</package>

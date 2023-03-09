@@ -1,0 +1,18 @@
+
+topic_imu: "/sensor_platform/imu"
+topic_radar_scan: "/pcl2_visualize_2"   
+topic_radar_trigger: "/radar/trigger" 
+topic_ground_truth_pose: "/dji_osdk_ros/local_position" 
+topic_ground_truth_twist_body: "/dji_osdk_ros/velocity"  
+
+l_b_r_x: 0.03
+l_b_r_y: 0.03
+l_b_r_z: -0.06
+
+q_b_r_w: 0.00524
+q_b_r_x: 0.69946
+q_b_r_y: 0.71461
+q_b_r_z: 0.00723
+
+radar_frame_ms: 18.5
+radar_rate: 10

@@ -1,0 +1,37 @@
+# Topics
+  pointCloudTopic: "pcl2_visualize_2"    # /points_raw     pcl2_visualize
+  imuTopic: "imu/data"         # IMU data /dji_osdk_ros/imu imu/data  
+  odomTopic: "odometry/imu"           
+  RofRadiusOutlierRemoval: 2    
+  NumofRadiusOutlierRemoval: 2    
+  VelThreshold: 1
+
+  # Frames
+  lidarFrame: "base_link"
+  baselinkFrame: "base_link"
+  odometryFrame: "odom"
+  mapFrame: "map"
+
+  # IMU Settings
+  imuAccNoise: 3.9939570888238808e-03
+  imuGyrNoise: 1.5636343949698187e-03
+  imuAccBiasN: 6.4356659353532566e-05
+  imuGyrBiasN: 3.5640318696367613e-05
+  imuGravity: 9.80511
+  imuRPYWeight: 0.01
+
+  # Extrinsics (lidar -> IMU)
+  extrinsicTrans: [0.0, 0.0, 0.0]
+  # extrinsicRot: [-1, 0, 0,
+  #                 0, 1, 0,
+  #                 0, 0, -1]
+  # extrinsicRPY: [0,  1, 0,
+  #                -1, 0, 0,
+  #                 0, 0, 1]
+  extrinsicRot: [1, 0, 0,
+                  0, 1, 0,
+                  0, 0, 1]
+  extrinsicRPY: [1, 0, 0,
+                  0, 1, 0,
+                  0, 0, 1]
+
