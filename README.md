@@ -1,5 +1,5 @@
 # radar-inertial-odometry 
-**The code for paper "Robust Radar-Inertial-Odometry in Dynamic 3D Environments" which is submitted to ICRA 2023.**  
+**The code for paper "Robust Radar-Inertial-Odometry in Dynamic 3D Environments" which is submitted to IROS 2023.**  
 In this paper, we proposed a Radar-Inertial-Odometry (RIO) pipeline utilizing a long-range 4D millimeter-wave radar for autonomous vehicle navigation. 
 The code and a test dataset are provided. A video of the demonstration of the method can be found on [Youtube](https://youtu.be/Bk2WCr_wWeI).
 # System architecture
