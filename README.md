@@ -28,10 +28,13 @@ catkin_make
 
 # Run the package
 1. Run the launch file:  
+```
 roslaunch radar_slam run.launch
+```
 2. Play existing bag files:  
+```
 rosbag play your-bag.bag
-
+```
 
 # Related Package
 1. Optimization node:[liosam](https://github.com/TixiaoShan/LIO-SAM)
