@@ -9,7 +9,7 @@ The code and a test dataset are provided. A video of the demonstration of the me
 ![demo](https://github.com/lincoln1587/radar-inertial-odometry/blob/master/radar_slam/doc/lib.png)
 
 # Dependency
-The code is tested based on the following setups
+The code is tested based on the following setups  
 ros : melodic  
 gtsam : 4.0.2  
 pcl : 1.8  
