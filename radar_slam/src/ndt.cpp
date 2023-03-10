@@ -139,11 +139,11 @@ public:
         ndt_map_pub_ = nh_.advertise<sensor_msgs::PointCloud2>("/ndt_map", 1);
         current_pose_pub_ = nh_.advertise<nav_msgs::Odometry>("/current_pose", 1);
         // Default values
-        nh_.param("max_iter", max_iter_, 30);   
-        nh_.param("step_size", step_size_, 0.01);  
+        nh_.param("max_iter", max_iter_, 50);   
+        nh_.param("step_size", step_size_, 0.1);  
         nh_.param("ndt_res", ndt_res_, 3.0);   
         nh_.param("trans_eps", trans_eps_, 0.01); 
-        nh_.param("voxel_leaf_size", voxel_leaf_size_, 4.0);
+        nh_.param("voxel_leaf_size", voxel_leaf_size_, 3.0);
         nh_.param("min_scan_range", min_scan_range_, 2.0);
         nh_.param("max_scan_range", max_scan_range_, 200.0);
         nh_.param("use_imu", use_imu_, false);
@@ -303,7 +303,8 @@ public:
 
         pcl::PointCloud<pcl::PointXYZI>::Ptr map_ptr(new pcl::PointCloud<pcl::PointXYZI>(map_));
         pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZI>(map_));
-
+        map_ptr->reserve(1000);
+        
         if (is_first_map_ == true)
         {
             ndt.setInputTarget(map_ptr); 
