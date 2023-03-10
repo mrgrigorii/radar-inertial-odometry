@@ -231,7 +231,8 @@ bool RadarEgoVelocityEstimator::solve3DLsq(const Matrix& radar_data, Vector3& v_
     if (config_.use_cholesky_instead_of_bdcsvd)
       v_r = (HTH).ldlt().solve(H.transpose() * y);
     else
-      v_r = H.bdcSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(y); eigen版本
+      //v_r = H.bdcSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(y); eigen版本
+      v_r = H.jacobiSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(y);
 
     if (estimate_sigma)
     {
